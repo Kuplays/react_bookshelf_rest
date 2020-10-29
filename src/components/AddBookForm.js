@@ -20,9 +20,9 @@ class AddBookForm extends React.Component {
 		ev.preventDefault();
 		alert(`TITLE: ${this.state.bookTitle}\nDESCR: ${this.state.bookDescr}\nPAGECOUNT: ${this.state.bookPageCount}`);
 		const book = {
-			title: 'testtttttttttttt',
-			descr: 'sddsfsdfsdfsdfsd',
-			pageCount: '99999'
+			title: this.state.bookTitle,
+			descr: this.state.bookDescr,
+			pageCount: this.state.bookPageCount
 		};
 		
 		AxiosParams.post('/add_book', book).then(result => {
