@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import BookList from './components/BookList';
 import AxiosParams from './utils/AxiosParams';
-import {AddBookForm} from './components/AddBookForm';
+import AddBookForm from './components/AddBookForm';
 
 class App extends React.Component {
   constructor(props) {
