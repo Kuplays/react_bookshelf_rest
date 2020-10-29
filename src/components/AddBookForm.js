@@ -1,4 +1,5 @@
 import React from 'react';
+import AxiosParams from '../utils/AxiosParams';
 
 class AddBookForm extends React.Component {
 	constructor(props) {
@@ -16,8 +17,18 @@ class AddBookForm extends React.Component {
 	}
 
 	onSubmit(ev) {
-		alert(`TITLE: ${this.state.bookTitle}\nDESCR: ${this.state.bookDescr}\nPAGECOUNT: ${this.state.bookPageCount}`);
 		ev.preventDefault();
+		alert(`TITLE: ${this.state.bookTitle}\nDESCR: ${this.state.bookDescr}\nPAGECOUNT: ${this.state.bookPageCount}`);
+		const book = {
+			title: 'testtttttttttttt',
+			descr: 'sddsfsdfsdfsdfsd',
+			pageCount: '99999'
+		};
+		
+		AxiosParams.post('/add_book', book).then(result => {
+			console.log(result);
+			console.log(result.data);
+		})
 	}
 
 	onChangeTitleField(ev) {
@@ -26,7 +37,6 @@ class AddBookForm extends React.Component {
 
 	onChangeDescrField(ev) {
 		this.setState({bookDescr: ev.target.value});
-		console.log(this.state.bookDescr);
 	}
 
 	onChangePageCountField(ev) {
