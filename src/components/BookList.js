@@ -1,4 +1,6 @@
 import React from 'react';
+import './BookListStyle.css';
+import dummy  from './placeholder.jpg';
 
 class BookList extends React.Component {
 	constructor(props) {
@@ -9,23 +11,26 @@ class BookList extends React.Component {
 
 	render() {
 		const {books} = this.props;
-		const displayValues = (
-			<ul>
-				<h1 className='class-title'>Books Data stub</h1>
+
+		return(
+			<div className='MainBlock'>
 				{books.map((book_object) => {
 					return (
-						<li key={book_object.book_id} className='class-list-item'>
-							<h3 className='class-book-title'>{book_object.book_title}</h3>
-							<p className='class-book-descr'>{book_object.book_descr}</p>
-							<p className='class-book-page-count'>{book_object.book_page_count}</p>
-						</li>
+						<div key={book_object.book_id} className='BookItem'>
+							<div className='LeftSide'>
+								<img src={dummy}/>
+							</div>
+							<div className='RightSide'>
+								<p className='BookTitle'>TITLE: {book_object.book_title}</p>
+								<p>GENRE: PLACEHOLDER</p>
+								<p>AUTHORS: PLACEHOLDER</p>
+								<p>About:</p>
+								<p className='BookDescr'>{book_object.book_descr}</p>
+								<p className='BookPageCount'>PAGES: {book_object.book_page_count} pages</p>
+							</div>
+						</div>
 					);
 				})}
-			</ul>
-		);
-		return(
-			<div>
-				{displayValues}
 			</div>
 		);
 	}

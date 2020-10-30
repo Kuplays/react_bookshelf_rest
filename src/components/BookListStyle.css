@@ -1,0 +1,28 @@
+.MainBlock {
+	position: absolute;
+	left: 15%;
+	right: 15%;
+	text-align: center;
+}
+
+.BookItem {
+	display: flex;
+	flex-direction: row;
+	text-align: left;
+	line-height: 0.5rem;
+	background-color: white;
+	margin-bottom: 1rem;
+	border-radius: 1rem;
+	padding: 1rem;
+}
+
+.LeftSide {
+	display: flex;
+	flex-direction: column;
+}
+
+.RightSide {
+	padding-left: 1rem;
+	display: flex;
+	flex-direction: column;
+}

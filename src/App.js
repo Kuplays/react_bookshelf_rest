@@ -18,13 +18,12 @@ class App extends React.Component {
     const {isLoading, books} = this.state;
     return (
         <div className='App'>
-          <AddBookForm />
-          <div className='container'>
+         <AddBookForm />
             <h1>
-              All books test fetch on rest point
-              {books === null ? <p>LOADING...</p> : <BookList books = {books}/>}
+              REACTive BOOK LIBRARY
             </h1>
-          </div>
+            {books === null ? <p>LOADING...</p> : <BookList books = {books}/>}
+          
           <div>
           </div>
         </div>  
