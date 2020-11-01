@@ -18,7 +18,6 @@ class AddBookForm extends React.Component {
 
 	onSubmit(ev) {
 		ev.preventDefault();
-		alert(`TITLE: ${this.state.bookTitle}\nDESCR: ${this.state.bookDescr}\nPAGECOUNT: ${this.state.bookPageCount}`);
 		const book = {
 			title: this.state.bookTitle,
 			descr: this.state.bookDescr,
@@ -28,6 +27,7 @@ class AddBookForm extends React.Component {
 		AxiosParams.post('/add_book', book).then(result => {
 			console.log(result);
 			console.log(result.data);
+			this.props.toggleState(true);
 		})
 	}
 
