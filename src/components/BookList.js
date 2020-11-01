@@ -5,7 +5,6 @@ import dummy  from './placeholder.jpg';
 class BookList extends React.Component {
 	constructor(props) {
 		super(props);
-
 	}
 
 
@@ -16,7 +15,14 @@ class BookList extends React.Component {
 			<div className='MainBlock'>
 				{books.map((book_object) => {
 					return (
-						<div key={book_object.book_id} className='BookItem'>
+						<div key={book_object.book_id} className='card'>
+							<img class='card-img-top' src={dummy} alt="Card image cap" />
+							<div className='card-body'>
+								<h5 className='card-title'>{book_object.book_title}</h5>
+								<p className='card-text'>{book_object.book_descr}</p>
+								<a href="#" class="btn btn-primary">Edit book</a>
+							</div>
+							{/*
 							<div className='LeftSide'>
 								<img src={dummy}/>
 							</div>
@@ -28,6 +34,7 @@ class BookList extends React.Component {
 								<p className='BookDescr'>{book_object.book_descr}</p>
 								<p className='BookPageCount'>PAGES: {book_object.book_page_count} pages</p>
 							</div>
+						*/}
 						</div>
 					);
 				})}

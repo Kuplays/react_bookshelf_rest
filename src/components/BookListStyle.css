@@ -16,13 +16,14 @@
 	padding: 1rem;
 }
 
-.LeftSide {
-	display: flex;
-	flex-direction: column;
+.card {
+	text-align: left;
+	width: 100%;
+	margin-bottom: 1rem;
 }
 
-.RightSide {
-	padding-left: 1rem;
-	display: flex;
-	flex-direction: column;
+.card-img-top {
+	width: 100%;
+	height: 15vw;
+	object-fit: cover;
 }
