@@ -12,7 +12,7 @@ class BookList extends React.Component {
 		const {books} = this.props;
 
 		return(
-			<div className='row row-cols-1 row-cols-md-3'>
+			<div className='row row-cols-1 row-cols-md-4'>
 				{books.map((book_object) => {
 					return (
 						<div className='col mb-4'>
