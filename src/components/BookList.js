@@ -12,9 +12,10 @@ class BookList extends React.Component {
 		const {books} = this.props;
 
 		return(
-			<div className='MainBlock'>
+			<div className='row row-cols-1 row-cols-md-3'>
 				{books.map((book_object) => {
 					return (
+						<div className='col mb-4'>
 						<div key={book_object.book_id} className='card'>
 							<img class='card-img-top' src={dummy} alt="Card image cap" />
 							<div className='card-body'>
@@ -35,6 +36,7 @@ class BookList extends React.Component {
 								<p className='BookPageCount'>PAGES: {book_object.book_page_count} pages</p>
 							</div>
 						*/}
+						</div>
 						</div>
 					);
 				})}

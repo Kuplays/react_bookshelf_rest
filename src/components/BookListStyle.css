@@ -27,3 +27,8 @@
 	height: 15vw;
 	object-fit: cover;
 }
+
+.row {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}

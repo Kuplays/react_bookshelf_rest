@@ -40,7 +40,7 @@ class App extends React.Component {
             </li>
           </ul>
         </nav>
-         {/*<AddBookForm toggleState={this.toggleLoadingState}/>*/}
+         <AddBookForm toggleState={this.toggleLoadingState}/>
 
           {(this.state.loading === true) ? <p>LOADING...</p> : <BookList books = {this.state.books} />}
           <div>
