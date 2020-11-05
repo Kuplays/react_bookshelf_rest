@@ -1,5 +1,6 @@
 import React from 'react';
 import AxiosParams from '../utils/AxiosParams';
+import './AddBook.css';
 
 class AddBookForm extends React.Component {
 	constructor(props) {
@@ -28,6 +29,7 @@ class AddBookForm extends React.Component {
 			console.log(result);
 			console.log(result.data);
 			this.props.toggleState(true);
+			this.props.closeForm();
 		})
 	}
 
@@ -45,32 +47,36 @@ class AddBookForm extends React.Component {
 
 	render() {
 		return (
-			<form onSubmit={this.onSubmit}>
-				<p>
-					<label>
-						BOOK TITLE:
-						<input type='text' name='formTitle' value={this.state.bookTitle} onChange={this.onChangeTitleField} />
-					</label>
-				</p>
+			<div className='backShadow'>
+				<div className='formInner'>
+					<form onSubmit={this.onSubmit}>
+						<p>
+							<label>
+								BOOK TITLE:
+								<input type='text' name='formTitle' value={this.state.bookTitle} onChange={this.onChangeTitleField} />
+							</label>
+						</p>
 
-				<p>
-					<label>
-						BOOK DESCRIPTION:
-						<input type='text' name='formDescr' value={this.state.bookDescr} onChange={this.onChangeDescrField} />
-					</label>
-				</p>
+						<p>
+							<label>
+								BOOK DESCRIPTION:
+								<input type='text' name='formDescr' value={this.state.bookDescr} onChange={this.onChangeDescrField} />
+							</label>
+						</p>
 
-				<p>
-					<label>
-						BOOK PAGES:
-						<input type='text' name='formDescr' value={this.state.bookPageCount} onChange={this.onChangePageCountField} />
-					</label>
-				</p>
+						<p>
+							<label>
+								BOOK PAGES:
+								<input type='text' name='formDescr' value={this.state.bookPageCount} onChange={this.onChangePageCountField} />
+							</label>
+						</p>
 
-				<p>
-					<input type='submit' value='Add Book' />
-				</p>
-			</form>
+						<p>
+							<input type='submit' value='Add Book' />
+						</p>
+					</form>
+				</div>
+			</div>
 		);
 	}
 }
