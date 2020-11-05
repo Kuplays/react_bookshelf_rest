@@ -11,13 +11,18 @@ class App extends React.Component {
     this.state = {
       loading: true,
       apiCalledPost: -1,
-      books: null
+      books: null,
+      showForm: false
     };
   }
 
   toggleLoadingState = (newState) => {
     this.setState({loading: newState});
     console.log("STATE IS: " + this.state.loading);
+  }
+
+  toggleAddBook = () => {
+    this.setState({showForm: !this.state.showForm});
   }
 
   render() {
@@ -33,7 +38,7 @@ class App extends React.Component {
               <a className='nav-link' href='#'>Home</a>
             </li>
             <li className='list-inline-item'>
-              <a className='nav-link' href='#'>Add Book</a>
+              <a className='nav-link' href='#' onClick={this.toggleAddBook.bind(this)}>Add Book</a>
             </li>
             <li className='list-inline-item'>
               <a className='nav-link' href='#'>User Statistics</a>
