@@ -50,30 +50,24 @@ class AddBookForm extends React.Component {
 			<div className='backShadow'>
 				<div className='formInner'>
 					<form onSubmit={this.onSubmit}>
-						<p>
-							<label>
-								BOOK TITLE:
-								<input type='text' name='formTitle' value={this.state.bookTitle} onChange={this.onChangeTitleField} />
-							</label>
-						</p>
+						<div className='form-group'>
+							<label for='formTitle'>Book Title</label>
+								<input type='text' className='form-control' id='formTitle' value={this.state.bookTitle} onChange={this.onChangeTitleField} />
+						</div>
 
-						<p>
-							<label>
-								BOOK DESCRIPTION:
-								<input type='text' name='formDescr' value={this.state.bookDescr} onChange={this.onChangeDescrField} />
-							</label>
-						</p>
+						<div className='form-group'>
+							<label for='formDescr'>Book description</label>
+								<textarea type='text' className='form-control' id='formDescr' rows='5' value={this.state.bookDescr} onChange={this.onChangeDescrField} />
+						</div>
 
-						<p>
-							<label>
-								BOOK PAGES:
-								<input type='text' name='formDescr' value={this.state.bookPageCount} onChange={this.onChangePageCountField} />
-							</label>
-						</p>
+						<div className='form-group'>
+							<label for='pageCount'>Pages</label>
+								<input type='text' className='form-control' id='pageCount' value={this.state.bookPageCount} onChange={this.onChangePageCountField} />
+						</div>
 
-						<p>
-							<input type='submit' value='Add Book' />
-						</p>
+						<div className='form-group'>
+							<input className='btn btn-success' type='submit' value='Add Book' />
+						</div>
 					</form>
 				</div>
 			</div>

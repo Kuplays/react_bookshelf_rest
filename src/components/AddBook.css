@@ -15,7 +15,10 @@
 	left: 25%;
 	right: 25%;
 	top: 25%;
-	bottom: 25%;
+	bottom: 12%;
 	margin: auto;
 	background: white;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	text-align: left;
 }
