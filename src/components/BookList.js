@@ -20,22 +20,12 @@ class BookList extends React.Component {
 								<img className='card-img-top' src={dummy} alt="Card image cap" />
 								<div className='card-body'>
 									<h5 className='card-title'>{book_object.book_title}</h5>
+									<h5>{book_object.book_genre}</h5>
+									<h5>{book_object.book_author}</h5>
+									<h5>{book_object.book_date_changed}</h5>
 									<p className='card-text'>{book_object.book_descr}</p>
 									<a href="#" className="btn btn-primary">Edit book</a>
 								</div>
-								{/*
-								<div className='LeftSide'>
-									<img src={dummy}/>
-								</div>
-								<div className='RightSide'>
-									<p className='BookTitle'>TITLE: {book_object.book_title}</p>
-									<p>GENRE: PLACEHOLDER</p>
-									<p>AUTHORS: PLACEHOLDER</p>
-									<p>About:</p>
-									<p className='BookDescr'>{book_object.book_descr}</p>
-									<p className='BookPageCount'>PAGES: {book_object.book_page_count} pages</p>
-								</div>
-							*/}
 							</div>
 						</div>
 					);
