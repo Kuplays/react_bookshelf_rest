@@ -8,12 +8,16 @@ class AddBookForm extends React.Component {
 		this.state = {
 			bookTitle: '',
 			bookDescr: '',
-			bookPageCount: ''
+			bookPageCount: '',
+			bookGenre: '',
+			bookAuthor: ''
 		};
 
 		this.onChangeTitleField = this.onChangeTitleField.bind(this);
 		this.onChangeDescrField = this.onChangeDescrField.bind(this);
 		this.onChangePageCountField = this.onChangePageCountField.bind(this);
+		this.onChangeGenreField = this.onChangeGenreField.bind(this);
+		this.onChangeAuthorField = this.onChangeAuthorField.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
 	}
 
@@ -22,7 +26,9 @@ class AddBookForm extends React.Component {
 		const book = {
 			title: this.state.bookTitle,
 			descr: this.state.bookDescr,
-			pageCount: this.state.bookPageCount
+			pageCount: this.state.bookPageCount,
+			genre: this.state.bookGenre,
+			author: this.state.bookAuthor
 		};
 		
 		AxiosParams.post('/add_book', book).then(result => {
@@ -45,6 +51,14 @@ class AddBookForm extends React.Component {
 		this.setState({bookPageCount: ev.target.value});
 	}
 
+	onChangeGenreField(ev) {
+		this.setState({bookGenre: ev.target.value});
+	}
+
+	onChangeAuthorField(ev) {
+		this.setState({bookAuthor: ev.target.value});
+	}
+
 	render() {
 		return (
 			<div className='backShadow'>
@@ -56,8 +70,18 @@ class AddBookForm extends React.Component {
 						</div>
 
 						<div className='form-group'>
+							<label for='genre'>Book Genre</label>
+								<input type='text' className='form-control' id='genre' value={this.state.bookGenre} onChange={this.onChangeGenreField} />
+						</div>
+
+						<div className='form-group'>
+							<label for='author'>Book Author</label>
+								<input type='text' className='form-control' id='author' value={this.state.bookAuthor} onChange={this.onChangeAuthorField} />
+						</div>
+
+						<div className='form-group'>
 							<label for='formDescr'>Book description</label>
-								<textarea type='text' className='form-control' id='formDescr' rows='5' value={this.state.bookDescr} onChange={this.onChangeDescrField} />
+								<textarea type='text' className='form-control' id='formDescr' rows='4' value={this.state.bookDescr} onChange={this.onChangeDescrField} />
 						</div>
 
 						<div className='form-group'>
