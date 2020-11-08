@@ -55,7 +55,7 @@ class App extends React.Component {
           <div>
           </div>
           {this.state.showForm ? <AddBookForm toggleState={this.toggleLoadingState} closeForm={this.toggleAddBook}/> : null}
-          {this.state.showStats ? <UserStats closeForm={this.toggleShowStats}/> : null}
+          {this.state.showStats ? <UserStats updateRequired={true} closeForm={this.toggleShowStats}/> : null}
         </div>  
     )
   }
