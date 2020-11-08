@@ -3,6 +3,7 @@ import './App.css';
 import BookList from './components/BookList';
 import AxiosParams from './utils/AxiosParams';
 import AddBookForm from './components/AddBookForm';
+import UserStats from './components/UserStats';
 import navbarLogo from './logo.svg'
 
 class App extends React.Component {
@@ -12,7 +13,8 @@ class App extends React.Component {
       loading: true,
       apiCalledPost: -1,
       books: null,
-      showForm: false
+      showForm: false,
+      showStats: false
     };
   }
 
@@ -23,6 +25,10 @@ class App extends React.Component {
 
   toggleAddBook = () => {
     this.setState({showForm: !this.state.showForm});
+  }
+
+  toggleShowStats = () => {
+    this.setState({showStats: !this.state.showStats});
   }
 
   render() {
@@ -41,7 +47,7 @@ class App extends React.Component {
               <a className='nav-link' href='#' onClick={this.toggleAddBook.bind(this)}>Add Book</a>
             </li>
             <li className='list-inline-item'>
-              <a className='nav-link' href='#'>User Statistics</a>
+              <a className='nav-link' href='#' onClick={this.toggleShowStats.bind(this)}>User Statistics</a>
             </li>
           </ul>
         </nav>
@@ -49,6 +55,7 @@ class App extends React.Component {
           <div>
           </div>
           {this.state.showForm ? <AddBookForm toggleState={this.toggleLoadingState} closeForm={this.toggleAddBook}/> : null}
+          {this.state.showStats ? <UserStats closeForm={this.toggleShowStats}/> : null}
         </div>  
     )
   }
